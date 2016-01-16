@@ -8,7 +8,7 @@ import java.io.PrintStream;
 public class StdOutRedirect {
 
 	public static void main(String[] args) throws FileNotFoundException {
-		File file = new File("log.txt");
+		File file = new File("logs/log.txt");
 		PrintStream printStream = new PrintStream(new FileOutputStream(file));
 
 		System.out.println("Hello World!");
