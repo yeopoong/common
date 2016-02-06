@@ -26,12 +26,8 @@ public class FileUtil {
 		String path = ".";
 
 		File dirFile = new File(path);
-		File[] fileList = dirFile.listFiles(new FilenameFilter() {
-			@Override
-			public boolean accept(File dir, String name) {
-				return name.endsWith(".xml");
-			}
-		});
+		FilenameFilter filter = new FileFilter(".xml");
+		File[] fileList = dirFile.listFiles(filter);
 
 		for (File file : fileList) {
 			if (file.isFile()) {
